@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts Cards</title>
+    <link rel="stylesheet" href="./CSS/Users_Profiles.css">
+</head>
+<body>
+    <header>
+        <!-- Création de l'entête-->
+        <div id = "banniere">
+            <h1>Hogwarts Cards</h1>
+        </div>
+        <div id="icone_menu">
+            <img src="images/icone_menu.png">
+        </div>
+        <!-- Création du menu-->
+        <nav class="menu">
+            <p>Menu</p>
+            <div id = "container_Tirage">
+                <a href="index.html" class="tirage">Tirage</a>
+            </div>
+            <div id = "container_Classeur">
+                <a href="classeur.html" class="classeur">Classeur</a>
+            </div>
+            <div id = "containerProfil">
+                <button type="button" id="profil" onclick="goProfil()">Profil</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <form method="POST" class="Inscription">
+            <h2>Inscription :</h2>
+            <div class = "champs">
+                <input type = "hidden" name ="form" value="InscriptionUser">
+
+                <label for="email">Email</label>
+                <input type="email" name="email" id="emailLogSign">
+
+                <label for="pseudo">Pseudo</label>
+                <input type="text" name="pseudo" id="pseudoSign">
+
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" id="passwordLogSign">
+
+                <label for="password">Confirmer le Mot de passe</label>
+                <input type="password" name="password" id="passwordLogSign2">
+
+                <button type="submit">Envoyer</button>
+            </div>
+        </form>
+
+        <form method="POST" class="Connexion">
+            <h2>Connexion :</h2>
+            <div class = "champs">
+                <input type = "hidden" name ="form" value="ConnexionUser">
+
+                <label for="pseudo">Email</label>
+                <input type="email" name="email" id="emailLog">
+
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" id="passwordLog">
+
+                <button type="submit">Envoyer</button>
+            </div>
+        </form>
+
+        <div id ="Bouton_pop-up">
+            <div id="popup-content">
+                <h2>Échange de cartes</h2>
+                <form id="formEchange">
+                    <input type="hidden" name="form" value="EchangeCarte">
+                    <label for="carteEchange">Carte à échanger</label>
+                    <select name="carteEchange" id="carteEchange">
+                        <option value="titreSelect">--Choisissez une carte--</option>
+                    </select>
+                    <label for="carteDestinataire">Destinataire :</label>
+                    <input type="text" name="carteDestinataire" id="carteDestinataire">
+                    <button id="echange">Échanger</button>
+                </form>
+            </div>
+            <div id="icone_echange">
+                <img src="images/echange.png">
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2024 - Hogwarts Cards</p>
+    </footer>
+    <script src="./JS/signin.js"></script>
+    <script src="./JS/login.js"></script>
+    <script src="./JS/UserProfil.js"></script>
+</body>
+</html>

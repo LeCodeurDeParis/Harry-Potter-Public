@@ -1,0 +1,415 @@
+body{
+    background-color: #544480;  /* Couleur du body */
+    position: relative;           /* Position relative pour le menu */
+    height: 100vh;                /* Hauteur du body */
+    margin: 0;                    /*Supression des marges et du padding du body */
+    padding: 0;
+}
+
+body a{
+    text-decoration: none;      /* Suppression du soulignement des liens */
+}
+
+h1 {
+    margin: 0;          /* Suppression des marges du h1 */
+}  
+
+header h1{       /* Style du titre de la page */
+    display: flex;
+    font-family: 'Cinzel', serif;
+    justify-content: center;
+    background-color: #3e2c71;
+    margin-bottom: 0;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    color : #F3B93F;
+}
+
+#titre{       /* Style du titre de la page */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    color : #F3B93F;
+}
+
+.menu{  /* Style du menu */
+    display: flex;
+    flex-direction: column;         /* définition du menu en colonne */
+    align-items: center;
+    margin-bottom: 2%;
+    position: fixed;                /* Position fixe pour le menu afin de le voir sur toute la page lorsqu'il est ouvert*/
+    top: 0;                         /* Positionnement du menu en haut de la page */
+    left: -250px;                   /* Positionnement du menu en dehors de la page (lorsqu'il est fermé)*/
+    width: 250px;                   /* Largeur du menu */
+    height: 100vh;
+    background-color: #4a3183; 
+    transition: left 0.3s ease;     /* Transition pour l'ouverture et la fermeture du menu */
+    z-index: 2; /* Positionnement de l'icone au dessus du menu */
+
+}
+
+.menu #container, .menu #container_Tirage, .menu #container_Classeur{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    width: 100%;
+    font-size: large;
+    text-align: center;
+}
+
+.menu #container:hover, .menu #container_Tirage:hover, .menu #container_Classeur:hover{
+    background-color: #32294de3;
+}
+
+.menu #containerProfil{                /* Style du contenu du menu */
+    padding-bottom: 7%;
+    width: 100%;
+    font-size: large;
+    text-align: center;
+}
+
+.menu #containerProfil:hover{        /* Style du contenu du menu lorsqu'on le survol */
+    background-color: #32294de3;
+}
+
+.menu #containerProfil button{        /* Style du bouton de déconnexion */
+    background-color: transparent;
+    color: #F3B93F;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 5%;
+    margin-top: 6%;
+    font-size: 17px;
+    font-family: inherit;
+}
+
+.menu #containerProfil:hover button{        
+    background-color: transparent;
+    border: 2px solid transparent;
+}
+
+.menu p{                   /* Style des paragraphes du menu (ici juste le titre)*/
+    color: #F3B93F;
+    font-size: large;
+    padding-top: 21%;
+    width: 100%;
+    padding-bottom: 16.5%;
+    background-color: #46386b;
+    margin: 0;
+    text-align: center;
+}
+
+.menu.show a{           /* Style des liens du menu lorsqu'il est ouvert */
+    color: #F3B93F;
+}
+
+.menu.show {        /* Positionnement du menu lorsqu'il est ouvert */
+    left: 0;
+}
+.menu.show #icone_menu{ /* Positionnement de l'icone du menu lorsqu'il est ouvert */
+    left: 250px;
+}
+
+#icone_menu{    /* Style de l'icone du menu */
+    position: fixed;    /* Position fixe pour l'icone afin de le voir sur toute la page lorsqu'il est ouvert*/
+    width: 90px;
+    height: 111px;
+    top: 0px;
+    z-index: 3; /* Positionnement de l'icone au dessus du menu */
+    background-color: #46386b;
+    border: 2px solid #46386b;
+    border-radius: 0 50% 50% 0;
+    transition: left 0.3s ease;     /* Transition pour l'ouverture et la fermeture du menu */
+}
+
+#icone_menu img{    /* Dimensions de l'image de l'icone du menu */
+    width: 75px;
+    height: 111px;
+}
+
+#CollectionUser{   /* Style de la collection de l'utilisateur */
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 33.5%;
+    color: #F3B93F;
+    background-color: #46386b;
+    border: 2px solid #46386b;
+    border-radius: 10px;
+    width: 33%;
+}
+
+#CollectionUser h2{   /* Style du titre de la collection de l'utilisateur */
+    color: #F3B93F;
+}
+
+#AllContainer.empty {
+    display: none;
+}
+
+#AllContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 7%;
+    background-color: #0b132b;
+    border: 2px solid #231ea5;
+    padding-bottom: 2%;
+    border-radius: 50px;
+}
+
+#carteContainer {  /* Style du container du tirage de cartes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25%;
+    margin-top: 4%;
+    margin-left: 3%;
+    margin-right: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: grey;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    position: relative;
+    animation: grow 1s ease-out;
+}
+
+#carteContainer .animstart{
+    animation: 'shrinkAndMove 1s ease-out forwards'
+}
+
+#nomHTML{        /* Style du nom de la carte */
+    text-align: center;
+}
+
+#carteContainer img{   /* Dimensions de l'image de la carte */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#legendeHTML{   /* Style de la légende de la carte */
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #585858;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    border-radius: 10px;
+}
+
+#legendeHTML h2{   /* Style du texte de la légende de la carte */
+    color: #F3B93F;
+}
+
+.tirage_button{   /* Style du container du bouton du tirage de cartes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 1%;
+}
+
+.tirage_button input{   /* Style et dimensions du bouton du tirage de cartes */
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 13%;
+    height: 13%;
+    background-color: #ebd0c3;
+    border-radius: 5px;
+    color: #b98e31;
+}
+
+#Bouton_pop-up{   /* Style du bouton de la popup */
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    margin-right: 1%;
+    flex-direction: column;
+    position: fixed;
+    bottom: 50px; /* Ajustez cette valeur pour positionner le bouton sur l'écran */
+    right: 0px; /* Ajustez cette valeur pour positionner le bouton sur l'écran */
+}
+
+#Bouton_pop-up:hover img{   /* Style de l'icone de la popup lorsqu'on le survol */
+    transform: scale(1.2);
+}
+
+#icone_echange{   /* Style de l'icone d'échange de cartes */
+    display: flex;
+    justify-content: right;
+    margin-top: 2%;
+    padding: 0%;
+}
+
+#icone_echange img{   /* Style de l'icone d'échange de cartes */
+    width: 6%;
+    height: 6%;
+    margin-top: 2%;
+    background-color: #362b55;
+    border: 2px solid #362b55;
+    border-radius: 50%;
+    padding: 5%;
+}
+
+#popup-content{
+    display: none;
+}
+
+#popup-content.show{   /* Style du contenu de la popup */
+    display: flex;
+    width: 25%;
+    height: 20%;
+    align-items:flex-start;
+    flex-direction: column;
+    background-color: #4d35c4;
+    color: #F3B93F;
+    padding-left: 2%;
+    padding-bottom: 2%;
+    border: 2px solid #231ea5;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 40%;
+    right: 35%;
+}
+
+#popup-content.show form {   /* Style du contenu de la popup */
+   display: flex;
+   flex-direction: column;
+}
+
+#popup-content.show form select{   /* Style du contenu de la popup */
+   margin-top: 5%;
+   margin-bottom: 5%;
+   width: 75%;
+}
+
+#popup-content.show form input{   /* Style du contenu de la popup */
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 75%;
+}
+
+#Reset {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-left: 48%;
+}
+
+footer{  /* Style du footer */
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    color: #F3B93F;
+    bottom: 0;
+    width: 100%;
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+    95% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 810px) and (min-width: 481px){
+
+    header h1{       /* Style du titre de la page */
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    #icone_menu{    /* Style de l'icone du menu */
+        width: 94px;
+        height: 115px;
+    }
+    #icone_menu img{    /* Style de l'icone du menu */
+        width: 94px;
+        height: 115px;
+    }
+    /* Ajustez les styles pour d'autres éléments ici */
+    #CollectionUser {
+        margin-left: 10%;
+        width: 80%;
+    }
+
+    #AllContainer {
+        flex-direction: column;
+        margin: 5%;
+    }
+
+    #carteContainer {
+        width: 92%;
+        margin-left: 4%;
+        margin-right: 0;
+    }
+
+    .tirage_button input {
+        width: 50%;
+        height: 50%;
+    }
+
+    #popup-content.show {
+        width: 25%;
+        height: 20%;
+    }
+}
+
+/* Pour les mobiles et les appareils avec une largeur d'écran jusqu'à 480px */
+@media only screen and (max-width: 480px) {
+
+    header h1{       /* Style du titre de la page */
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    #icone_menu{    /* Style de l'icone du menu */
+        width: 64px;
+        height: 72px;
+    }
+    #icone_menu img{    /* Style de l'icone du menu */
+        width: 64px;
+        height: 72px;
+    }
+    /* Ajustez les styles pour d'autres éléments ici */
+    #CollectionUser {
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    #AllContainer {
+        flex-direction: column;
+        margin: 3%;
+    }
+
+    #carteContainer {
+        width: 90%;
+        margin-top: 4%;
+        margin-left: 4%;
+        margin-bottom: 4%;
+    }
+
+    .tirage_button input {
+        width: 70%;
+        height: 70%;
+    }
+
+    #popup-content.show {
+        width: 50%;
+        height: 30%;
+        right: 25%;
+    }
+}

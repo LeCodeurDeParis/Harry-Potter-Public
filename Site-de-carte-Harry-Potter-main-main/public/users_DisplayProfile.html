@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/users_DisplayProfile.css">
+    <title>Hogwarts Cards</title>
+</head>
+<body>
+    <header>
+        <!-- Création de l'entête-->
+        <div id = "banniere">
+            <h1>Hogwarts Cards</h1>
+        </div>
+        <div id="icone_menu">
+            <img src="images/icone_menu.png">
+        </div>
+        <!-- Création du menu-->
+        <nav class="menu">
+            <p>Menu</p>
+            <div id = "container_Tirage">
+                <a href="index.html" class="tirage">Tirage</a>
+            </div>
+            <div id = "container_Classeur">
+                <a href="classeur.html" class="classeur">Classeur</a>
+            </div>
+            <div id = "containerProfil">
+                <button type="button" id="profil" onclick="goProfil()">Profil</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="ProfilInfo">
+            <div id="Pcontainer">
+                <h2>Profil de l'utilisateur</h2>      
+                <h1></h1>
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+            <input type="submit", value="Déconnexion", onclick="logout()">
+        </div>
+        <div id = "classeur">
+            <h2>Votre Classeur</h2>
+            <div id="cartesUser">
+
+            </div>
+        </div>
+        <div id ="Bouton_pop-up">
+            <div id="popup-content">
+                <h2>Échange de cartes</h2>
+                <form id="formEchange">
+                    <input type="hidden" name="form" value="EchangeCarte">
+                    <label for="carteEchange">Carte à échanger</label>
+                    <select name="carteEchange" id="carteEchange">
+                        <option value="titreSelect">--Choisissez une carte--</option>
+                    </select>
+                    <label for="carteDestinataire">Destinataire :</label>
+                    <input type="text" name="carteDestinataire" id="carteDestinataire">
+                    <button id="echange">Échanger</button>
+                </form>
+            </div>
+            <div id="icone_echange">
+                <img src="images/echange.png">
+            </div>
+        </div>    
+    </main>
+    <footer>
+        <p>© 2024 - Hogwarts Cards</p>
+    </footer>
+    <script src="./JS/UserProfil.js"></script>
+    <script src="./JS/fetch.js"></script>
+</body>
+</html>

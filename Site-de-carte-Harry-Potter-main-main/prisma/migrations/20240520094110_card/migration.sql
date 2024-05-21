@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `card` MODIFY `imageUrl` VARCHAR(191) NOT NULL DEFAULT 'NULL';

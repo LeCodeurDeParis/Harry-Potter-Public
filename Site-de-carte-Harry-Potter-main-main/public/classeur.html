@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts Cards</title>
+    <link rel="stylesheet" href="./CSS/classeur.css">
+</head>
+<body>
+    <header>
+        <!-- Création de l'entête-->
+        <div id = "banniere">
+            <h1>Hogwarts Cards</h1>
+        </div>
+        <div id="icone_menu">
+            <img src="images/icone_menu.png" alt="icone du menu">
+        </div>
+        <!-- Création du menu-->
+        <nav class="menu">
+            <p>Menu</p>
+            <div id = "container_Tirage">
+                <a href="index.html" class="tirage">Tirage</a>
+            </div>
+            <div id = "container_Classeur">
+                <a href="classeur.html" class="classeur">Classeur</a>
+            </div>
+            <div id = "containerProfil">
+                <button type="button" id="profil" onclick="goProfil()">Profil</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <p id = "titre">Collection Globale</p>
+        <div class="searchbar">
+            <img src="images/chercher.png" alt="Image pour la barre de recherche">
+            <input type="text" id="search" placeholder="Rechercher un personnage">
+        </div>
+        <p id = "filtre">Choissisez un filtre</p>
+        <!-- Création des boutons de filtre-->
+        <div id = "boutonContainer">
+            <input type="radio" id="all" name="maison" value="Tous les personnages" checked>
+            <label for="all">Tous les personnages</label>
+
+            <input type="radio" id="Gryffindor" name="maison" value="Gryffindor">
+            <label for="Gryffindor">Gryffindor</label>
+
+            <input type="radio" id="Slytherin" name="maison" value="Slytherin">
+            <label for="Slytherin">Slytherin</label>
+
+            <input type="radio" id="Hufflepuff" name="maison" value="Hufflepuff">
+            <label for="Hufflepuff">Hufflepuff</label>
+
+            <input type="radio" id="Ravenclaw" name="maison" value="Ravenclaw">
+            <label for="Ravenclaw">Ravenclaw</label>
+
+            <input type="radio" id="Sans_Maison" name="maison" value="Sans Maison">
+            <label for="Sans_Maison">Sans Maison</label>
+        </div>
+        <!-- Création du container pour les cartes-->
+        <div id = "cardContainer"></div>
+        
+        <div id ="Bouton_pop-up">
+            <div id="popup-content">
+                <h2>Échange de cartes</h2>
+                <form id="formEchange">
+                    <input type="hidden" name="form" value="EchangeCarte">
+                    <label for="carteEchange">Carte à échanger</label>
+                    <select name="carteEchange" id="carteEchange">
+                        <option value="titreSelect">--Choisissez une carte--</option>
+                    </select>
+                    <label for="carteDestinataire">Destinataire :</label>
+                    <input type="text" name="carteDestinataire" id="carteDestinataire">
+                    <button id="echange">Échanger</button>
+                </form>
+            </div>
+            <div id="icone_echange">
+                <img src="images/echange.png" alt="icone de la zone d'échange">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 - Hogwarts Cards</p>
+    </footer>
+    <script src="./JS/classeur.js"></script>  
+</body>
+</html>

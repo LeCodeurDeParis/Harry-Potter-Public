@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `card` ADD COLUMN `like` BOOLEAN NOT NULL DEFAULT false;
