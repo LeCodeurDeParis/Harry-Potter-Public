@@ -44,7 +44,7 @@ async function DisplayMyCards(){
     let cardProfil = document.getElementsByClassName('deck')
     for (let element of cardProfil){
         element.addEventListener('click', async (event) => {
-            window.location.href = `profil.html?id=${element.dataset.slug}`;
+            window.location.href = `ProfilCard.html?id=${element.dataset.slug}`;
         })
     } 
 }
